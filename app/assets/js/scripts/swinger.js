@@ -34,13 +34,6 @@ window.eval = global.eval = function () {
     throw new Error('Sorry, this app does not support window.eval().');
 }
 
-// Display warning when devtools window is opened.
-remote.getCurrentWebContents().on('devtools-opened', () => {
-    console.log('%cConsole', 'color: #ff8326; font-size: 30px; font-weight: bold');
-    console.log('%cBienvenue sur la console !', 'font-size: 16px');
-    console.log('%cSi tu fais une capture d\'écran ou un copier-coller pour de l\'aide (support-launcher), fait attention à masquer certaines informations qui s\'affiche ici !', 'font-size: 16px');
-});
-
 // Disable zoom, needed for darwin.
 webFrame.setZoomLevel(0);
 webFrame.setVisualZoomLevelLimits(1, 1);
@@ -383,7 +376,8 @@ function onValidateJava() {
     hideLoading();
 
     const isLoggedIn = Object.keys(ConfigManager.getAuthAccounts()).length > 0;
-    if(isLoggedIn) {
+    const isLoggedInGood = ConfigManager.getSelectedAccount();
+    if(isLoggedIn && isLoggedInGood != undefined) {
         validateSelectedAccount();
         showMainUI(VIEWS.launcher);
         initLauncherView();

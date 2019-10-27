@@ -60,18 +60,18 @@ setupSettingsTabs();
  * Saves
  */
 $("#settings-save-button").click(function() {
-    closeSettings();
+    savesSettings();
 });
 
 document.addEventListener('keydown', (e) => {
     if(getCurrentView() === VIEWS.settings) {
         if(e.key === 'Escape') {
-            closeSettings()
+            switchView(getCurrentView(), VIEWS.launcher);
         }
     }
 });
 
-function closeSettings(){
+function savesSettings(){
     let maxRam = Number(settingsMaxRAMRange.getAttribute('value'));
     if(maxRam % 1 > 0) {
         maxRam = Math.round(maxRam * 1000) + 'M';
@@ -102,6 +102,5 @@ function closeSettings(){
     }
 
     ConfigManager.save();
-
     switchView(getCurrentView(), VIEWS.launcher);
 }
