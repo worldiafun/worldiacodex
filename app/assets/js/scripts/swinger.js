@@ -131,6 +131,8 @@ function onDistroLoad(data) {
         forceUpdate = true;
     }
 
+    console.log("p: " + process.platform);
+
     ipcRenderer.on('autoUpdateNotification', (event, arg, info) => {
         switch(arg) {
             case 'checking-for-update': {
@@ -141,7 +143,7 @@ function onDistroLoad(data) {
             case 'update-available': {
                 loggerAutoUpdater.log('New update available:', info.version);
 
-                if(!forceUpdate && process.platform != 'linux') {
+                if(!forceUpdate && process.platform == 'win32') { // Temp
                     setOverlayContent('Mise à jour du launcher disponible 😘',
                         'Une nouvelle mise à jour pour le launcher est disponible.' 
                         + '<br>Voulez-vous l\'installer maintenant ?',
@@ -158,7 +160,7 @@ function onDistroLoad(data) {
                     });
                 }
                 else {
-                    if(process.platform != 'linux') {
+                    if(process.platform == 'win32') { // Temp
                         setOverlayContent('Mise à jour du launcher disponible 😘',
                             'Une nouvelle mise à jour pour le launcher est disponible.' 
                             + '<br>Voulez-vous l\'installer maintenant ?'
