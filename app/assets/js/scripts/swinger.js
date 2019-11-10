@@ -131,8 +131,6 @@ function onDistroLoad(data) {
         forceUpdate = true;
     }
 
-    console.log("p: " + process.platform);
-
     ipcRenderer.on('autoUpdateNotification', (event, arg, info) => {
         switch(arg) {
             case 'checking-for-update': {
