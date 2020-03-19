@@ -101,6 +101,8 @@ Build pour une plateforme spécifique :
 **Aide projet**
 
 * [ElectronLauncher](https://github.com/WesterosCraftCode/ElectronLauncher)
+* [HeliosLauncher](https://github.com/dscalzi/HeliosLauncher)
+
 ---
 Copyright 2019 Paladium. All rights reserved.
 
