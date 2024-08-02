@@ -7,7 +7,7 @@
   "license": "AGPL-3.0",
   "homepage": "https://worldia.fun/",
   "bugs": {
-    "url": "https://worldia.fun/wiki"
+    "url": "https://github.com/worldiafun/worldiacodex/pulls"
   },
   "private": true,
   "main": "index.js",
