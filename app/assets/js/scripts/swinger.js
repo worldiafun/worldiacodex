@@ -17,12 +17,12 @@ const DistroManager = require('./assets/js/distromanager');
 const AuthManager = require('./assets/js/authmanager');
 
 const loggerLauncher = LoggerUtil('%c[Launcher]', 'color: #000668; font-weight: bold');
-const loggerSwinger = LoggerUtil('%c[Swinger]', 'color: #000668; font-weight: bold');
+const loggerSwinger = LoggerUtil('%c[Codex]', 'color: #000668; font-weight: bold');
 const loggerAutoUpdater = LoggerUtil('%c[AutoUpdater]', 'color: #209b07; font-weight: bold');
 
 const launcherVersion = "0.0.01-d13";
 
-loggerLauncher.log('Paladium Launcher (v' + launcherVersion + ") started on " + Library.mojangFriendlyOS() + "..");
+loggerLauncher.log('Codex (v' + launcherVersion + ") started on " + Library.mojangFriendlyOS() + "..");
 
 // Log deprecation and process warnings.
 process.traceProcessWarnings = true;
@@ -45,7 +45,7 @@ $(function() {
 })
 
 function initSwinger() {
-    loggerSwinger.log('Swinger Initializing..');
+    loggerSwinger.log('Codex Initializing..');
 
     showLoading();
     setLoadingStatut("Chargement des éléments de l'interface");
@@ -532,7 +532,7 @@ function updateRangedSlider(element, value, notch) {
 // #region
 
 function showLoading() {
-    var splashes = [{text: "Chargement du menu de chargement", author: "Chaika9"}, {text: "Char...ge...ment en courssssss.....", author: "Chaika9"}, {text: "#On aime les chargements", author: "Chaika9"}];
+    var splashes = [{text: "Chargement du menu de chargement", author: "Shiina"}, {text: "Char...ge...ment en courssssss.....", author: "Shiina"}, {text: "#On aime les chargements", author: "Shiina"}];
 
     var splashe_text = splashes[Math.floor(Math.random() * splashes.length)];
     $("#loading-splash-text").html(splashe_text.text);

@@ -27,10 +27,10 @@ function getCurrentPlatform() {
 builder.build( {
     targets: (process.argv[2] != null && Platform[process.argv[2]] != null ? Platform[process.argv[2]] : getCurrentPlatform()).createTarget(),
     config: {
-        appId: 'paladiumlauncher',
-        productName: 'Paladium Launcher',
+        appId: 'worldialauncher',
+        productName: 'Worldia Launcher',
         artifactName: '${productName}.${ext}',
-        copyright: 'Copyright © 2019 Paladium',
+        copyright: 'Copyright © 2024 Worldia',
         directories: {
             buildResources: 'build',
             output: 'dist'
@@ -59,10 +59,10 @@ builder.build( {
         },
         linux: {
             target: 'AppImage',
-            maintainer: 'Chaika9',
-            vendor: 'Paladium',
-            synopsis: 'Paladium Launcher',
-            description: 'Paladium Launcher',
+            maintainer: 'Shiina',
+            vendor: 'Worldia',
+            synopsis: 'Worldia Launcher',
+            description: 'Worldia Launcher',
             category: 'Game'
         },
         compression: 'maximum',

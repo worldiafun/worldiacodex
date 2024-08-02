@@ -47,7 +47,7 @@ function initAutoUpdater(event) {
 }
 
 function initialize() {
-    //app.setName('Paladium Launcher');
+    app.setName('Worldia Launcher');
     app.disableHardwareAcceleration();
 
 	if(makeSingleInstance()) {
